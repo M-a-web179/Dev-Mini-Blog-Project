@@ -7,7 +7,7 @@ const samplePosts: PostType[] = [
     title: 'Getting Started with React Hooks',
     author: 'Alice Chen',
     content: 'A quick guide to useState and useEffect for beginners looking to modernize their class components...',
-    datePosted: '2026-09-17T09:00:00Z',
+    datePosted: new Date().toISOString(),
   },
   {
     id: 2,
