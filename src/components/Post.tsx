@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import { memo, useState, useEffect } from 'react'
 import type { CSSProperties } from 'react'
 import type { Post as PostType } from '../types/Post'
 import './Post.css'
@@ -14,8 +14,14 @@ function Post({ post }: PostProps) {
     day: 'numeric',
   })
 
-  const isNew =
-    Date.now() - new Date(post.datePosted).getTime() < 24 * 60 * 60 * 1000
+  const [isNew, setIsNew] = useState(false)
+
+  useEffect(() => {
+    const isRecent =
+      Date.now() - new Date(post.datePosted).getTime() < 24 * 60 * 60 * 1000
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- comparing to the live clock is inherently a side effect, not a pure render computation
+    setIsNew(isRecent)
+  }, [post.datePosted])
 
   const isFeaturedAuthor = post.author === 'Alice Chen'
   const authorStyle: CSSProperties = {
