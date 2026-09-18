@@ -1,13 +1,17 @@
 import './Header.css'
 
-function Header() {
+interface HeaderProps {
+  onNewPostClick: () => void
+}
+
+function Header({ onNewPostClick }: HeaderProps) {
   return (
     <header className="header">
       <h1 className="header__logo">Dev Insights</h1>
       <nav className="header__nav">
-        <a href="#" className="header__link">
+        <button className="header__link" onClick={onNewPostClick}>
           New Post
-        </a>
+        </button>
       </nav>
     </header>
   )
