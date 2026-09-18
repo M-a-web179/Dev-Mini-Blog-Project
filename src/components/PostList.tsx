@@ -1,6 +1,7 @@
-import type { Post } from '../types/Post'
+import type { Post as PostType } from '../types/Post'
+import Post from './Post'
 
-const samplePosts: Post[] = [
+const samplePosts: PostType[] = [
   {
     id: 1,
     title: 'Getting Started with React Hooks',
@@ -28,10 +29,7 @@ function PostList() {
   return (
     <div className="post-list">
       {samplePosts.map((post) => (
-        <div key={post.id}>
-          <h3>{post.title}</h3>
-          <p>by {post.author}</p>
-        </div>
+        <Post key={post.id} post={post} />
       ))}
     </div>
   )
