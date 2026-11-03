@@ -52,7 +52,7 @@ Dev-Mini-Blog-Project/
 1. Clone the repository:
 
 ```bash
-git clone [PASTE-YOUR-GITHUB-REPOSITORY-URL-HERE]
+git clone  https://github.com/M-a-web179/Dev-Mini-Blog-Project.git
 ```
 
 2. Move into the project folder:
